@@ -1,4 +1,4 @@
-function createEl(htmlString, attrs, ...children) {
+const createEl = function (htmlString, attrs, ...children) {
   if (typeof htmlString !== "string") {
     throw Error("Argument 'htmlString' is required and must be a string");
   }
@@ -19,7 +19,7 @@ function createEl(htmlString, attrs, ...children) {
     }
   }
 
-  children.forEach(function(child) {
+  children.forEach(function (child) {
     let node;
 
     if (child.constructor.name.includes("Element")) {
@@ -32,6 +32,6 @@ function createEl(htmlString, attrs, ...children) {
   });
 
   return el;
-}
+};
 
 module.exports = createEl;
